@@ -1,8 +1,22 @@
-@import "~bootstrap/scss/bootstrap";
+//VARIABLES
+$light: #fff;
+$dark: #000;
+$grey: #999;
+$header-w: 225px;
+$wrapper-w: calc(100% - #{$header-w});
 
-ul,li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+
+//HEADER
+.note-header {
+    width: $header-w;
+    height: 100vh;
+    max-height: 100vh;
+    padding: 20px;
+    border-right: 2px solid $light;
 }
 
+//WRAPPER
+.note-wrapper {
+    width: $wrapper-w;
+    padding: 20px 7.5px;
+}
