@@ -9,7 +9,10 @@ const NoteDisplay = ({markdown}) => {
     return {__html: toConv};
   };
     return (<>
-      <div className="note-display" dangerouslySetInnerHTML={createMarkup(content)} />
+      <div className="note-display">
+        <h1></h1>
+        <div className="note-display-text" dangerouslySetInnerHTML={createMarkup(content)} />
+      </div>
     </>)
 }
 
