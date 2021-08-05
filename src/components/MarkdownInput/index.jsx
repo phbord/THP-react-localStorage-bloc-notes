@@ -16,13 +16,13 @@ const MarkdownInput = ({newNote}) => {
 
   const printClick = (e) => {
     newNote(title, text)
-    console.log('test1')
+    // console.log('test1')
   }
 
   const handleSave = (e) => {
     const data = {title: title, text: text}
     localStorage.setItem(`_note_${title}`, JSON.stringify(data))
-    console.log('test2: ')
+    // console.log('test2: ')
   }
 
   return (<>

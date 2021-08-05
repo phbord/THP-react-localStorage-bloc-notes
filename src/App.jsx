@@ -8,21 +8,22 @@ import './assets/scss/index.scss';
 
 
 function App() {
+
+  const local = () => {
+    let output = []
+    const savedNotes = Object.keys(localStorage).filter(x => {
+      return x.includes('_note_')
+    })
+    savedNotes.map(x => output.push(JSON.parse(localStorage[x])))
+    return output
+  }
+
   const [state, setState] = React.useState({}) //configuration du localstorage
-  const [storage, setStorage] = React.useState(localStorage)
+  const [storage, setStorage] = React.useState(local())
 
   //nouvelle note
   const newNote = (title, text) => {
     setState({title: title, text: text})
-  }
-
-  const getSavedNotes = () => {
-    let output = []
-    const savedNotes = Object.keys(storage).filter(x => {
-      x.includes('_note_')
-    })
-    savedNotes.map(x => output.push(storage[x]))
-    return output
   }
 
   return (<>
