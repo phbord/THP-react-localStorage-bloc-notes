@@ -19,8 +19,10 @@ const MarkdownInput = ({newNote}) => {
     newNote(title, text)
   }
 
+  const handleSave = (e) => {}
+
   return (<>
-    <form className="note-form mt-5">
+    <form className="note-form mt-5" onSubmit={printClick}>
       <div className="mb-3">
         <input type="text" 
                 className="form-control" 
@@ -36,7 +38,8 @@ const MarkdownInput = ({newNote}) => {
                   onChange={onTextChange}></textarea>
       </div>
       <div className="mb-3">
-        <button onClick={printClick} type="submit" className="btn btn-danger">Sauvegarder</button>
+        <button type="submit" 
+                className="btn btn-danger">Sauvegarder</button>
       </div>
     </form>
   </>)
