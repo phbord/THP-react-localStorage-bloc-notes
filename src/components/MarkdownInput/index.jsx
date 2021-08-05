@@ -21,7 +21,7 @@ const MarkdownInput = ({newNote}) => {
 
   const handleSave = (e) => {
     const data = {title: title, text: text}
-    localStorage.setItem(`__note_${title}`, JSON.stringify(data))
+    localStorage.setItem(`_note_${title}`, JSON.stringify(data))
     console.log('test2: ')
   }
 

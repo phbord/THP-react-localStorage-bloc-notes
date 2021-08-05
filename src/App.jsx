@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap';
+import NoteList from 'components/NoteList';
 import NoteDisplay from 'components/NoteDisplay';
 import MarkdownInput from 'components/MarkdownInput';
 
@@ -7,16 +8,22 @@ import './assets/scss/index.scss';
 
 
 function App() {
-
-  //configuration du localstorage
-  const [state, setState] = React.useState({})
+  const [state, setState] = React.useState({}) //configuration du localstorage
+  const [storage, setStorage] = React.useState(localStorage)
 
   //nouvelle note
   const newNote = (title, text) => {
     setState({title: title, text: text})
   }
 
-  console.log(state)
+  const getSavedNotes = () => {
+    let output = []
+    const savedNotes = Object.keys(storage).filter(x => {
+      x.includes('_note_')
+    })
+    savedNotes.map(x => output.push(storage[x]))
+    return output
+  }
 
   return (<>
     <div className="App">
@@ -26,14 +33,7 @@ function App() {
                   className="btn btn-danger w-100">Ajouter une note</button>
         </div>
         <nav className="note-nav">
-          <ul>
-            <li>
-                <a href="#">
-                  <h1></h1>
-                  <p></p>
-                </a>
-            </li>
-          </ul>
+          <NoteList notes={storage} />
         </nav>
       </header>
       <section className="note-wrapper">

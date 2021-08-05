@@ -12,7 +12,8 @@ const NoteDisplay = ({title, text}) => {
   return (<>
     <div className="note-display">
       <h1>{title}</h1>
-      <div className="text" dangerouslySetInnerHTML={createMarkup(textContent)}/>
+      <div className="text" 
+            dangerouslySetInnerHTML={createMarkup(textContent)}/>
     </div>
   </>)
 }
