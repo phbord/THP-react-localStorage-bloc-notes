@@ -16,7 +16,7 @@ const MarkdownInput = ({newNote}) => {
 
   const printClick = (e) => {
     e.preventDefault()
-    newNote(text)
+    newNote(title, text)
   }
 
   return (<>

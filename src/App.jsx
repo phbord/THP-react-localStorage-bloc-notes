@@ -8,10 +8,10 @@ import './assets/scss/index.scss';
 
 function App() {
 
-  const [state, setState] = React.useState('');
+  const [state, setState] = React.useState({});
 
-  const newNote = (text) => {
-    setState(text)
+  const newNote = (title, text) => {
+    setState({title: title, text: text});
   }
 
   console.log(state)
@@ -36,7 +36,7 @@ function App() {
       </header>
       <section className="note-wrapper">
         <div className="container">
-          <NoteDisplay markdown={state}/>
+          <NoteDisplay title={state.title} text={state.text}/>
           <MarkdownInput newNote={newNote}/>
         </div>
       </section>
