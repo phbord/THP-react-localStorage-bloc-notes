@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const MarkdownInput = () => {
+const MarkdownInput = ({newNote}) => {
 
   const [title, setTitle] = React.useState('');
   const [text, setText] = React.useState('');
@@ -12,6 +12,11 @@ const MarkdownInput = () => {
   
   const onTextChange = (e) => {
     setText(e.target.value);
+  }
+
+  const printClick = (e) => {
+    e.preventDefault()
+    newNote(text)
   }
 
   return (<>
@@ -31,7 +36,7 @@ const MarkdownInput = () => {
                   onChange={onTextChange}></textarea>
       </div>
       <div className="mb-3">
-        <button type="submit" className="btn btn-danger">Sauvegarder</button>
+        <button onClick={printClick} type="submit" className="btn btn-danger">Sauvegarder</button>
       </div>
     </form>
   </>)

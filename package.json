@@ -16,6 +16,7 @@
     "@popperjs/core": "^2.9.3",
     "sass": "^1.37.5",
     "sass-loader": "^10.2.0",
+    "showdown": "^1.9.1",
     "webpack": "^4.44.2"
   },
   "scripts": {
