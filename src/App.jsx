@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap';
-import Nav from 'components/Nav';
-import Form from 'components/Form';
+import NoteDisplay from 'components/NoteDisplay';
+import MarkdownInput from 'components/MarkdownInput';
 
 import './assets/scss/index.scss';
 
@@ -9,11 +9,26 @@ import './assets/scss/index.scss';
 function App() {
   return (<>
     <div className="App">
-      <Nav />
+      <header className="note-header">
+        <div className="note-btn">
+          <button type="button" 
+                  className="btn btn-danger w-100">Ajouter une note</button>
+        </div>
+        <nav className="note-nav">
+          <ul>
+            <li>
+                <a href="#">
+                  <h1></h1>
+                  <p></p>
+                </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
       <section className="note-wrapper">
         <div className="container">
-          <div className="note-display"></div>
-          <Form />
+          <NoteDisplay />
+          <MarkdownInput />
         </div>
       </section>
     </div>

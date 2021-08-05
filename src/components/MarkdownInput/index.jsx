@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Form = () => {
+const MarkdownInput = () => {
     return (<>
       <form className="note-form mt-5">
         <div className="mb-3">
@@ -21,4 +21,4 @@ const Form = () => {
     </>)
 }
 
-export default Form
+export default MarkdownInput
