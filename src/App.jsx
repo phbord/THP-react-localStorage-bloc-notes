@@ -19,7 +19,7 @@ function App() {
   }
 
   const [state, setState] = React.useState({}) //configuration du localstorage
-  const [storage, setStorage] = React.useState(local())
+  const [storage, setStorage ] = React.useState(local())
 
   //nouvelle note
   const newNote = (title, text) => {

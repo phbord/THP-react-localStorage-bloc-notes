@@ -3,11 +3,8 @@ import NoteLeft from 'components/NoteLeft';
 
 
 const NoteList = ({notes, setNew}) => {
-  console.log(notes)
-  const [clicked, setClicked] = React.useState(notes[0])
 
   const newNote = (title, text) => {
-    setClicked({title: title, text: text})
     setNew(title, text);
   }
 
