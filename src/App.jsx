@@ -34,7 +34,7 @@ function App() {
                   className="btn btn-danger w-100">Ajouter une note</button>
         </div>
         <nav className="note-nav">
-          <NoteList notes={storage} />
+          <NoteList notes={storage} setNew={newNote} />
         </nav>
       </header>
       <section className="note-wrapper">
