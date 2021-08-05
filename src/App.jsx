@@ -8,10 +8,12 @@ import './assets/scss/index.scss';
 
 function App() {
 
-  const [state, setState] = React.useState({});
+  //configuration du localstorage
+  const [state, setState] = React.useState({})
 
+  //nouvelle note
   const newNote = (title, text) => {
-    setState({title: title, text: text});
+    setState({title: title, text: text})
   }
 
   console.log(state)
@@ -37,7 +39,7 @@ function App() {
       <section className="note-wrapper">
         <div className="container">
           <NoteDisplay title={state.title} text={state.text}/>
-          <MarkdownInput newNote={newNote}/>
+          <MarkdownInput newNote={newNote} />
         </div>
       </section>
     </div>

@@ -15,14 +15,23 @@ const MarkdownInput = ({newNote}) => {
   }
 
   const printClick = (e) => {
-    e.preventDefault()
     newNote(title, text)
+    console.log('test1')
   }
 
-  const handleSave = (e) => {}
+  const handleSave = (e) => {
+    const data = {title: title, text: text}
+    localStorage.setItem(`__note_${title}`, JSON.stringify(data))
+    console.log('test2: ')
+  }
 
   return (<>
-    <form className="note-form mt-5" onSubmit={printClick}>
+    <form className="note-form mt-5" 
+          onSubmit={(e) => {
+            e.preventDefault()
+            printClick()
+            handleSave()
+          }}>
       <div className="mb-3">
         <input type="text" 
                 className="form-control" 
