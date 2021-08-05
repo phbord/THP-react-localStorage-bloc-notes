@@ -1,21 +1,23 @@
 import React from 'react';
 
 
-const MarkdownInput = () => {
-
+const MarkdownInput = ({handleSave}) => {
   const [title, setTitle] = React.useState('');
   const [text, setText] = React.useState('');
 
   const onTitleChange = (e) => {
     setTitle(e.target.value);
   }
-  
   const onTextChange = (e) => {
     setText(e.target.value);
   }
+  const saveData = (e) => {
+    e.preventDefault()
+    handleSave(title, text)
+  }
 
   return (<>
-    <form className="note-form mt-5">
+    <form className="note-form mt-5" onSubmit={saveData}>
       <div className="mb-3">
         <input type="text" 
                 className="form-control" 

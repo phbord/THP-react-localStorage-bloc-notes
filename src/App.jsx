@@ -7,6 +7,22 @@ import './assets/scss/index.scss';
 
 
 function App() {
+  const [data, setData] = React.useState({})
+
+  const handleSave = (title, text) => {
+    setData({title: title, text: text})
+    console.log(typeof localStorage.getItem(title), '/', data)
+    storeData(data)
+  }
+
+  const storeData = (storage) => {
+    if (!localStorage.getItem(storage.title)) {
+      localStorage.setItem(storage.title, JSON.stringify(storage))
+    } else {
+      localStorage.title = JSON.stringify(data)
+    }
+  }
+
   return (<>
     <div className="App">
       <header className="note-header">
@@ -28,7 +44,7 @@ function App() {
       <section className="note-wrapper">
         <div className="container">
           <NoteDisplay />
-          <MarkdownInput />
+          <MarkdownInput handleSave={handleSave} />
         </div>
       </section>
     </div>
